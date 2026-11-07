@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Dr. José Gregorio Hernández</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- BARRA SUPERIOR DE CONTACTO INFORMATIVA -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div>🚨 <strong>Emergencias 24/7:</strong> +58 (0272) 000-0000 | 📍 Trujillo, Venezuela</div>
+            <div><span>Atención Centrada en el Humanismo</span></div>
+        </div>
+    </div>
+
+   <!-- ENCABEZADO -->
+    <header>
+        <div class="logo">
+            <!-- Imagen real del hospital en lugar del emoji -->
+            <img src="{{ url_for('static', filename='img/hospital_fachada.jpg') }}" alt="Hospital JGH" style="width: 45px; height: 45px; object-fit: cover; border-radius: 6px; border: 2px solid #0284c7;">
+            <div class="logo-text">
+                <h2>HOSPITAL</h2>
+                <span>Dr. José Gregorio Hernández</span>
+            </div>
+        </div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#institucional">Nosotros</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#especialidades">Especialidades</a>
+            <a href="#contacto">Contacto</a>
+            <a href="{{ url_for('admin_login') }}" class="btn-header">Admin</a>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+
+        <!-- BANNER PRINCIPAL (HERO) -->
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <span class="badge">Atención Médica Integral</span>
+                <h1>Hospital Dr. José Gregorio Hernández</h1>
+                <p>Salud, ciencia y vocación de servicio al cuidado de nuestra comunidad.</p>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="boton primario">Solicitar Cita Médica</a>
+                    <a href="#servicios" class="boton secundario">Conocer Servicios</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- MÓDULOS DESTACADOS RÁPIDOS -->
+        <section class="destacados-rapidos">
+            <div class="grid-destacados">
+                <div class="caja-destacada">
+                    <img src="{{ url_for('static', filename='img/emergencia.jpg') }}" alt="Emergencia 24H" class="imagen-tarjeta-emergencia">
+                    <h3>Emergencia 24H</h3>
+                    <p>Atención médica inmediata de adultos y pediatría con especialistas a cuerpo presente.</p>
+                </div>
+                <div class="caja-destacada">
+                    <img src="{{ url_for('static', filename='img/laboratorio.avif') }}" alt="Laboratorio Clínico" class="imagen-tarjeta-laboratorio">
+                    <h3>Laboratorio Clínico</h3>
+                    <p>Resultados confiables de hematología, orina, heces y química sanguínea.</p>
+                </div>
+                <div class="caja-destacada">
+                    <img src="{{ url_for('static', filename='img/radiologia.jpg') }}" alt="Centro de Imágenes" class="imagen-tarjeta-imagenes">
+                    <h3>Centro de Imágenes</h3>
+                    <p>Radiología, ecografía y tomografía con tecnología de última generación.</p>
+                </div>
+                <div class="caja-destacada">
+                    <img src="{{ url_for('static', filename='img/sala de parto.webp') }}" alt="Sala de Parto" class="imagen-tarjeta-imagenes">
+                    <h3>Sala de Parto</h3>
+                    <p>"Donde el amor da la bienvenida a la vida."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICIOS -->
+        <section class="servicios" id="servicios">
+            <div class="titulo-seccion">
+                <h2>Nuestros Servicios Clínicos</h2>
+                <p>Equipamiento moderno y profesionalismo dedicado a su pronta recuperación.</p>
+            </div>
+
+            <div class="contenedor-servicios">
+                <div class="tarjeta-servicio">
+                    <img src="{{ url_for('static', filename='img/atencion-medica.jpg') }}" alt="Emergencias 24 Horas" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 12px;">
+                    <h3>Emergencias</h3>
+                    <p>Atención médica inmediata y soporte vital las 24 horas del día con personal especializado.</p>
+                </div>
+
+                <div class="tarjeta-servicio">
+                    <img src="{{ url_for('static', filename='img/uci.jpeg') }}" alt="Unidad de Cuidados Intensivos (UCI)" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 12px;">
+                    <h3>Unidad de Cuidados Intensivos (UCI)</h3>
+                    <p>Monitoreo continuo y soporte vital especializado las 24 horas.</p>
+                </div>
+
+                <div class="tarjeta-servicio">
+                    <img src="{{ url_for('static', filename='img/hospitalizacion.webp') }}" alt="Hospitalización" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 12px;">
+                    <h3>Hospitalización</h3>
+                    <p>Habitaciones confortables y monitoreo constante para una recuperación óptima.</p>
+                </div>
+
+                <div class="tarjeta-servicio">
+                    <img src="{{ url_for('static', filename='img/farmacia.jpg') }}" alt="Farmacia Hospitalaria" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 12px;">
+                    <h3>Farmacia Hospitalaria</h3>
+                    <p>Suministro de medicamentos e insumos esenciales garantizados.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ESPECIALIDADES MÉDICAS -->
+        <section class="especialidades" id="especialidades">
+            <div class="titulo-seccion">
+                <h2>Especialidades Médicas</h2>
+                <p>Cuerpo médico calificado en áreas clínicas y quirúrgicas.</p>
+            </div>
+
+            <div class="contenedor-especialidades">
+                <div class="tarjeta-especialidad">
+                    <img src="{{ url_for('static', filename='img/cardiologia.avif') }}" alt="Cardiología" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 12px;">
+                    <h3>Cardiología</h3>
+                    <p>Evaluación cardiovascular, electrocardiogramas y control de presión arterial.</p>
+                </div>
+
+                <div class="tarjeta-especialidad">
+                    <img src="{{ url_for('static', filename='img/neurologia.webp') }}" alt="Neurologia" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 12px;">
+                    <h3>Neurologia</h3>
+                    <p>Cuidando tu mente, protegiendo tu vida.</p>
+                </div>
+
+                <div class="tarjeta-especialidad">
+                    <img src="{{ url_for('static', filename='img/traumatolgia.webp') }}" alt="Traumatologia" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 12px;">
+                    <h3>Traumatologia</h3>
+                    <p>Tratamiento de fracturas, lesiones articulares y cirugía del aparato locomotor.</p>
+                </div>
+
+                <div class="tarjeta-especialidad">
+                    <img src="{{ url_for('static', filename='img/odontologia.jpeg') }}" alt="Odontologia" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 12px;">
+                    <h3>Odontologia</h3>
+                    <p>Salud bucal integral con un trato humano y profesional.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN INSTITUCIONAL: NOSOTROS (CARRUSEL UNITARIO) -->
+        <section class="seccion-institucional" id="institucional">
+            <div class="contenedor-institucional">
+                <div class="titulo-seccion">
+                    <h2>Nosotros</h2>
+                    <p>Compromiso histórico y vocación de servicio al pueblo trujillano.</p>
+                </div>
+
+                <!-- Contenedor del Carrusel -->
+                <div class="carrusel-institucional-wrapper">
+                    <!-- Botón Izquierda -->
+                    <button class="carrusel-btn prev-btn" onclick="moverCarrusel(-1)">&#10094;</button>
+
+                    <!-- Pistas del Carrusel -->
+                    <div class="carrusel-track-container">
+                        <div class="carrusel-track" id="carruselTrack">
+                            
+                            <!-- Tarjeta 1: Historia -->
+                            <div class="tarjeta-carrusel">
+                                <div class="tarjeta-icono">📜</div>
+                                <div class="tarjeta-texto">
+                                    <h3>Historia</h3>
+                                    <p>El hospital “Dr. José Gregorio Hernández” de Trujillo, fue fundado el 24 de junio de 1943 por disposición del presidente del estado en acuerdo con la asamblea legislativa de turno, decidiendo colocar el nombre en honor al destacado médico e ilustre trujillano. Más tarde, en el año 1958, se construyó una nueva edificación de tipo monobloque de cuatro pisos, conservándose la estructura antigua en funcionamiento.</p>
+                                </div>
+                            </div>
+
+                            <!-- Tarjeta 2: Misión -->
+                            <div class="tarjeta-carrusel">
+                                <div class="tarjeta-icono">🎯</div>
+                                <div class="tarjeta-texto">
+                                    <h3>Misión</h3>
+                                    <p>Establecer y poner en práctica políticas públicas en el área de la salud en el estado Trujillo, garantizando atención médica oportuna y de eficiente calidad en todos los programas sociales, a fin de optimizar el sistema de vida de la población e incorporando a la comunidad e instituciones vinculadas.</p>
+                                </div>
+                            </div>
+
+                            <!-- Tarjeta 3: Visión -->
+                            <div class="tarjeta-carrusel">
+                                <div class="tarjeta-icono">👁️</div>
+                                <div class="tarjeta-texto">
+                                    <h3>Visión</h3>
+                                    <p>Orientar al mejoramiento de la calidad de vida de los trujillanos y usuarios, procurando el fomento y la restitución del bienestar humano a través de un servicio integral de salud con capacidad y gerencia, trabajando bajo una visión autogestionaria que asegure la participación plena de la comunidad.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Botón Derecha -->
+                    <button class="carrusel-btn next-btn" onclick="moverCarrusel(1)">&#10095;</button>
+                </div>
+
+                <!-- Indicadores de Puntos -->
+                <div class="carrusel-puntos">
+                    <span class="punto activo" onclick="irAPagina(0)"></span>
+                    <span class="punto" onclick="irAPagina(1)"></span>
+                    <span class="punto" onclick="irAPagina(2)"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO Y UBICACIÓN -->
+        <section class="contacto" id="contacto">
+            <div class="contenedor-contacto">
+                <div class="info-contacto">
+                    <h2>Centro de Atención y Citas</h2>
+                    <p>Ponte en contacto con nuestro equipo para agendar tu consulta o solicitar información sobre nuestros servicios.</p>
+                    <div class="item-contacto">
+                        <strong>📍 Dirección:</strong> Sector Centro, Av. Principal, Estado Trujillo.
+                    </div>
+                    <div class="item-contacto">
+                        <strong>📞 Master Central:</strong> +58 (0272) 000-0000
+                    </div>
+                    <div class="item-contacto">
+                        <strong>✉️ Correo Institucional:</strong> contacto@hospitalgregoriohernandez.gob.ve
+                    </div>
+                    <div class="item-contacto">
+                        <strong>⏰ Consultas Externas:</strong> Lunes a Viernes de 8:00 AM a 4:00 PM
+                    </div>
+                </div>
+
+                <form class="formulario-contacto" action="/" method="POST">
+                    <h3>Solicitar Cita o Información</h3>
+                
+                    {% with messages = get_flashed_messages() %}
+                      {% if messages %}
+                        <div style="background-color: #d1e7dd; color: #0f5132; border: 1px solid #badbcc; padding: 12px; border-radius: 6px; margin-bottom: 15px; font-weight: bold; text-align: center;">
+                          {% for message in messages %}
+                            <p style="margin: 0;">{{ message }}</p>
+                          {% endfor %}
+                        </div>
+                      {% endif %}
+                    {% endwith %}
+
+                    <input type="text" name="nombre" placeholder="Nombre y Apellido" required>
+                    <input type="email" name="email" placeholder="Correo Electrónico" required>
+                   <select name="especialidad" required style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; box-sizing: border-box; background: white;">
+                    <option value="">Seleccione una especialidad...</option>
+                    <option value="Odontologia">Odontología</option>
+                    <option value="Neurologia">Neurología</option>
+                    <option value="Cardiologia">Cardiología</option>
+                    <option value="Traumatologia">Traumatología</option>
+                    <option value="Ginecologia">Ginecología</option>
+                   </select>
+
+                    <textarea name="mensaje" rows="4" placeholder="Detalles o mensaje adicional" required></textarea>
+
+                    <button type="submit" class="boton primario">Enviar Solicitud</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA (FOOTER) -->
+    <footer>
+        <div class="footer-container">
+            <div class="columna-footer">
+                <h3>Hospital Dr. JGH</h3>
+                <p>Comprometidos con brindar atención médica de calidad, centrada en el respeto y el bienestar integral de cada paciente.</p>
+            </div>
+            <div class="columna-footer">
+                <h3>Servicios Clave</h3>
+                <ul>
+                    <li>Emergencias 24 Horas</li>
+                    <li>Unidad de Imágenes</li>
+                    <li>Laboratorio Clínico</li>
+                    <li>Consultas Médicas</li>
+                </ul>
+            </div>
+            <div class="columna-footer">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#especialidades">Especialidades</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            
+            <!-- NUEVA COLUMNA DE REDES SOCIALES -->
+            <div class="columna-footer">
+                <h3>Síguenos</h3>
+                <p>Mantente conectado con nuestras novedades oficiales:</p>
+                <div style="margin-top: 15px; display: flex; gap: 15px; font-size: 22px;">
+                    <a href="https://www.instagram.com/tu_usuario" target="_blank" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@tu_usuario" target="_blank" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" title="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hospital Dr. José Gregorio Hernández. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT DEL CARRUSEL -->
+    <script>
+        let indiceSlide = 0;
+        const track = document.getElementById('carruselTrack');
+        const puntos = document.getElementsByClassName('punto');
+        const totalPaginas = 3;
+        let temporizadorAuto = null;
+
+        function actualizarCarrusel() {
+            const desplazamiento = -indiceSlide * 100;
+            track.style.transform = `translateX(${desplazamiento}%)`;
+
+            for (let i = 0; i < puntos.length; i++) {
+                puntos[i].classList.remove('activo');
+            }
+            if (puntos[indiceSlide]) {
+                puntos[indiceSlide].classList.add('activo');
+            }
+        }
+
+        function moverCarrusel(direccion) {
+            detenerAutoPlay();
+            indiceSlide += direccion;
+           
+            if (indiceSlide >= totalPaginas) {
+                indiceSlide = 0;
+            } else if (indiceSlide < 0) {
+                indiceSlide = totalPaginas - 1;
+            }
+           
+            actualizarCarrusel();
+            iniciarAutoPlay();
+        }
+
+        function irAPagina(pagina) {
+            detenerAutoPlay();
+            indiceSlide = pagina;
+            actualizarCarrusel();
+            iniciarAutoPlay();
+        }
+
+        function iniciarAutoPlay() {
+            clearInterval(temporizadorAuto);
+           
+            temporizadorAuto = setInterval(() => {
+                indiceSlide = (indiceSlide + 1) % totalPaginas;
+                actualizarCarrusel();
+            }, 6000);
+        }
+
+        function detenerAutoPlay() {
+            clearInterval(temporizadorAuto);
+        }
+
+        window.onload = function() {
+            iniciarAutoPlay();
+        };
+    </script>
+
+</body>
+
+</html>
